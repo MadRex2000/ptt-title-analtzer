@@ -1,1 +1,1 @@
-# ptt-title-analtzer
+# ptt-title-crawler
