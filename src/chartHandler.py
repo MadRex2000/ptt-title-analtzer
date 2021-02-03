@@ -13,6 +13,7 @@ def create_data_chart(data):
     for key in data:
         if data[key] > 3:
             chart_data[key] = data[key]
+    plt.figure(figsize=(30, 15))
     plt.bar(range(len(chart_data)), chart_data.values(), align='center')
     plt.xticks(range(len(chart_data)), chart_data.keys(), fontproperties=font, rotation=30)
     plt.title('PTT Gossiping Title Analyze')
@@ -51,10 +52,10 @@ def handle_data(datas):
                     else:
                         cal_data[str(detail['name'])] = 1
             else:
-                if detail['name'] in cal_data:
-                    cal_data[str(detail['name'])] += 1
+                if details['name'] in cal_data:
+                    cal_data[str(details['name'])] += 1
                 else:
-                    cal_data[str(detail['name'])] = 1
+                    cal_data[str(details['name'])] = 1
         except SyntaxError:
             pass
     create_data_chart(cal_data)
